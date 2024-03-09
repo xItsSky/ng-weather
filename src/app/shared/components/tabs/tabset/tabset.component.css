@@ -1,0 +1,24 @@
+.tabset {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    ul {
+        display: flex;
+        list-style-type: none;
+        padding: 0;
+        border-bottom: 1px solid #DCDCDC;
+
+        li {
+            padding: 1rem;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .active {
+            background-color: #DCDCDC;
+        }
+    }
+}

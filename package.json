@@ -12,6 +12,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^17.0.6",
     "@angular/common": "^17.0.6",
     "@angular/compiler": "^17.0.6",
     "@angular/core": "^17.0.6",
@@ -20,6 +21,7 @@
     "@angular/platform-browser-dynamic": "^17.0.6",
     "@angular/router": "^17.0.6",
     "@angular/service-worker": "17.0.6",
+    "@ngrx/signals": "^17.1.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^3.4.1",
     "core-js": "^2.6.9",
@@ -37,6 +39,7 @@
     "@types/jasmine": "~3.6.0",
     "@types/node": "^6.14.6",
     "blue-harvest": "^0.2.1",
+    "codelyzer": "^6.0.2",
     "jasmine": "~2.6.0",
     "jasmine-core": "~3.6.0",
     "jasmine-spec-reporter": "~5.0.0",

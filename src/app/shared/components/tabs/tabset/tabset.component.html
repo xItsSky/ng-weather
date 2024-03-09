@@ -1,0 +1,13 @@
+<div class="tabset" #tabsContainer>
+    <ul>
+        @for (tab of tabs; let index = $index; track index) {
+            <li [ngClass]="{'active': tab.active}" (click)="selectTab(index)">
+                {{ tab.title }}
+                <button (click)="closeTab($event, index)">X</button>
+            </li>
+        }
+    </ul>
+    <div #tabBody id="tabBody">
+        <ng-content></ng-content>
+    </div>
+</div>
