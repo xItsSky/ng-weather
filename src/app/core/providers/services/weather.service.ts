@@ -1,4 +1,4 @@
-import {inject, Injectable, Signal} from '@angular/core';
+import {inject, Injectable} from '@angular/core';
 import {ConditionsAndZip} from '../../../shared/model/conditions-and-zip.type';
 import {LocationStore} from '../stores/location.store';
 import {toObservable, toSignal} from '@angular/core/rxjs-interop';
@@ -16,7 +16,7 @@ export class WeatherService {
 
     private readonly locations = this.#locationStore.locations;
 
-    private readonly currentConditions = toSignal(
+    readonly currentConditions = toSignal(
         toObservable(this.locations).pipe(
             switchMap(locations => forkJoin(locations
                 .map(location => this.#weatherDataService.getCurrentConditions(location).pipe(
@@ -28,13 +28,6 @@ export class WeatherService {
      */
     getForecast(zipcode: string): Observable<Forecast> {
         return this.#weatherDataService.getForecast(zipcode);
-    }
-
-    /**
-     * Get the current conditions of all locations stored in the application state
-     */
-    getCurrentConditions(): Signal<ConditionsAndZip[]> {
-        return this.currentConditions;
     }
 
     /**

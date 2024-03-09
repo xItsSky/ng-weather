@@ -1,18 +1,18 @@
 <div>
     <tabset (onClose)="onClose($event)">
-        @for (location of currentConditionsByZip(); track location.zip) {
-            <tab [id]="location.zip" [title]="location.data.name + '(' + location.zip + ')'">
+        @for (conditionsAndZip of currentConditionsByZip(); track conditionsAndZip.zip) {
+            <tab [title]="conditionsAndZip.data.name + '(' + conditionsAndZip.zip + ')'">
                 <div>
-                    <h4>Current conditions: {{ location.data.weather[0].main }}</h4>
+                    <h4>Current conditions: {{ conditionsAndZip.data.weather[0].main }}</h4>
                     <h4>Temperatures today:</h4>
                     <p>
-                        Current {{ location.data.main.temp | number:'.0-0' }}
-                        - Max {{ location.data.main.temp_max | number:'.0-0' }}
-                        - Min {{ location.data.main.temp_min | number:'.0-0' }}
+                        Current {{ conditionsAndZip.data.main.temp | number:'.0-0' }}
+                        - Max {{ conditionsAndZip.data.main.temp_max | number:'.0-0' }}
+                        - Min {{ conditionsAndZip.data.main.temp_min | number:'.0-0' }}
                     </p>
                     <p>
-                        <a [routerLink]="['/forecast', location.zip]">Show 5-day forecast
-                            for {{ location.data.name }}</a>
+                        <a [routerLink]="['/forecast', conditionsAndZip.zip]">Show 5-day forecast
+                            for {{ conditionsAndZip.data.name }}</a>
                     </p>
                 </div>
                 <div>

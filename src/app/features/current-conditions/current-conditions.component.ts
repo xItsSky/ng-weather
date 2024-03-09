@@ -19,7 +19,7 @@ export class CurrentConditionsComponent {
     readonly weatherService = inject(WeatherService);
     private router = inject(Router);
     protected locationService = inject(LocationService);
-    protected currentConditionsByZip: Signal<ConditionsAndZip[]> = this.weatherService.getCurrentConditions();
+    protected currentConditionsByZip: Signal<ConditionsAndZip[]> = this.weatherService.currentConditions;
 
     onClose({id}: TabEvent) {
         const currentConditionsByZip = this.currentConditionsByZip()

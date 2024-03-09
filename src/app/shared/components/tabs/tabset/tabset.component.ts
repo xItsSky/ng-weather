@@ -39,7 +39,6 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
 
         this.tabSubscription = this.tabs.changes.subscribe((changes: QueryList<TabComponent>) => {
             if (changes.length !== this.tabsCount) {
-                console.log(`new size: ${changes.length}`)
                 // upd  te the selected tab index
                 this.selectedIndex = this.calculIndex(this.selectedIndex);
                 // update the tab count
@@ -47,6 +46,7 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
             }
 
             const currentActiveTabIndex = this.tabs.toArray().findIndex(tab => tab.active);
+
             if (this.selectedIndex !== null && this.selectedIndex !== currentActiveTabIndex) {
                 // Update tab active status after change detection has run in order to avoid ExpressionChangedAfterItHasBeenCheckedError
                 Promise.resolve().then(() => {
@@ -64,6 +64,10 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
         return Math.min(this.tabs.length - 1, Math.max(index || 0, 0));
     }
 
+    /**
+     * Select a new Tab
+     * @param index the index of the tab to select
+     */
     selectTab(index: number) {
         this.selectedIndex = index;
         const newActiveTab = this.tabs.get(this.selectedIndex);
@@ -72,21 +76,17 @@ export class TabsetComponent implements AfterContentInit, OnDestroy {
         });
     }
 
+    /**
+     * Close a tab
+     * @param event the {@link MouseEvent}
+     * @param index the index of the tab to delete
+     */
     closeTab(event: MouseEvent, index: number) {
         event.preventDefault();
         event.stopPropagation();
 
         // Notify about the deletion
         this.OnCloseEvent.emit({id: index});
-
-        // Delete Header tab
-        const newTabsList = this.tabs.toArray();
-        newTabsList.splice(index, 1);
-        this.tabs.reset(newTabsList);
-        this.tabs.notifyOnChanges();
-
-        // delete body tab
-        this.tabBodyRef.nativeElement.children.item(index).remove();
     }
 
     ngOnDestroy() {

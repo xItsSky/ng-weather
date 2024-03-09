@@ -42,7 +42,7 @@ export const LocationStore = signalStore(
                 const locations = getState(state).locations;
                 if (locations.includes(zipcode)) {
                     locations.splice(locations.indexOf(zipcode), 1)
-                    patchState(state, {locations});
+                    patchState(state, {locations: [...locations]});
                     localStorage.setItem(storageKey, JSON.stringify(locations));
                 }
             }
