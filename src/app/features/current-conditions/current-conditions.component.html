@@ -1,22 +1,24 @@
-<div>
+<div class="current-conditions">
     <tabset (onClose)="onClose($event)">
         @for (conditionsAndZip of currentConditionsByZip(); track conditionsAndZip.zip) {
             <tab [title]="conditionsAndZip.data.name + '(' + conditionsAndZip.zip + ')'">
-                <div>
-                    <h4>Current conditions: {{ conditionsAndZip.data.weather[0].main }}</h4>
-                    <h4>Temperatures today:</h4>
-                    <p>
-                        Current {{ conditionsAndZip.data.main.temp | number:'.0-0' }}
-                        - Max {{ conditionsAndZip.data.main.temp_max | number:'.0-0' }}
-                        - Min {{ conditionsAndZip.data.main.temp_min | number:'.0-0' }}
-                    </p>
-                    <p>
-                        <a [routerLink]="['/forecast', conditionsAndZip.zip]">Show 5-day forecast
-                            for {{ conditionsAndZip.data.name }}</a>
-                    </p>
-                </div>
-                <div>
-                    <img ngSrc="weatherService.getWeatherIcon(location.data.weather[0].id)">
+                <div class="current-conditions-location">
+                    <div>
+                        <img [src]="weatherService.getWeatherIcon(conditionsAndZip.data.weather[0].id)">
+                    </div>
+                    <div>
+                        <h4>Current conditions: {{ conditionsAndZip.data.weather[0].main }}</h4>
+                        <h4>Temperatures today:</h4>
+                        <p>
+                            Current {{ conditionsAndZip.data.main.temp | number:'.0-0' }}
+                            - Max {{ conditionsAndZip.data.main.temp_max | number:'.0-0' }}
+                            - Min {{ conditionsAndZip.data.main.temp_min | number:'.0-0' }}
+                        </p>
+                        <p>
+                            <a [routerLink]="['/forecast', conditionsAndZip.zip]">Show 5-day forecast
+                                for {{ conditionsAndZip.data.name }}</a>
+                        </p>
+                    </div>
                 </div>
             </tab>
         }
