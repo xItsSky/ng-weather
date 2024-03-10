@@ -66,6 +66,9 @@
             }
           }
         },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy"
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
