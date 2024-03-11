@@ -21,6 +21,6 @@ export const APPLICATON_CONFIG = {
         provideHttpClient(withInterceptors([CacheInterceptor(environment.cacheDuration)])),
         provideAnimations(),
         provideRouter(routes),
-        provideServiceWorker('/ngsw-worker.js', {enabled: environment.production}),
+        provideServiceWorker('/ng-weather/ngsw-worker.js', {enabled: environment.production}),
     ]
 }
