@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1710034151544,
+  "timestamp": 1710182253854,
   "index": "/ng-weather/index.html",
   "assetGroups": [
     {
@@ -13,7 +13,7 @@
       "urls": [
         "/ng-weather/favicon.ico",
         "/ng-weather/index.html",
-        "/ng-weather/main.01467a44678d0570.js",
+        "/ng-weather/main.90cc65521b29b2db.js",
         "/ng-weather/polyfills.4dc6d70e1fd3b9b5.js",
         "/ng-weather/runtime.5cb124e9330f88b6.js",
         "/ng-weather/styles.62da56fab7c23777.css"
@@ -66,8 +66,8 @@
     "/ng-weather/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "/ng-weather/assets/weather.json": "5ce53747ac7b830cab8740514bba77459926438a",
     "/ng-weather/favicon.ico": "84161b857f5c547e3699ddfbffc6d8d737542e01",
-    "/ng-weather/index.html": "8a5b69a43278f9eb1c154fd39f75eb4602123a64",
-    "/ng-weather/main.01467a44678d0570.js": "fa2994fbe5a71caf278edf7d019fb0766a632a02",
+    "/ng-weather/index.html": "02a3684869086ae07ad29c7a24da40655d92dc7a",
+    "/ng-weather/main.90cc65521b29b2db.js": "5614cced2ff7f9ca4e4af61cca7580d871cfb0cf",
     "/ng-weather/polyfills.4dc6d70e1fd3b9b5.js": "830b67f1082e816a47f5b0276d4d90508f2b2275",
     "/ng-weather/runtime.5cb124e9330f88b6.js": "418fac31ebd9e4889c68e5eb8920bc6aeb338afe",
     "/ng-weather/styles.62da56fab7c23777.css": "c54110b93e86a53798e788d07bf736e419d2c9d8"
